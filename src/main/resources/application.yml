@@ -1,0 +1,29 @@
+# 更改后台端口
+server:
+  ip: 81.70.23.198
+  port: 9090
+
+# 数据源配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://81.70.23.198:3306/htmanager?serverTimezone=GMT%2b8
+    username: root
+    password: root
+  servlet:
+    multipart:
+      max-file-size: 20MB #单个文件最大为20M
+      max-request-size: 100MB #单次请求文件总数大小为20M
+
+# mybatis配置
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#文件上传、下载路径
+files:
+  upload:
+#    path: D:/Project/files/
+    path: /home/files/
